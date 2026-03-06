@@ -10,6 +10,10 @@ A minimal macOS menu bar app that repeatedly sends Shift key presses to the acti
 - Keyboard shortcuts: `⌘S` toggle, `⌘Q` quit
 - 1 second interval between presses
 
+## Download
+
+Grab the latest `ShiftRepeater.zip` from the [Releases](../../releases/latest) page, unzip, and drag `ShiftRepeater.app` into your Applications folder.
+
 ## Requirements
 
 - macOS 13.0+
