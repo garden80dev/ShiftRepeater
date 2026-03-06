@@ -1,0 +1,29 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build .app bundle
+        run: bash build-app.sh
+
+      - name: Create ZIP
+        run: |
+          cd dist
+          zip -r ../ShiftRepeater.zip ShiftRepeater.app
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ShiftRepeater.zip
+          generate_release_notes: true
